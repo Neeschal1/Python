@@ -1,1 +1,1 @@
-"# Python" 
+This repository documents my journey of learning Python programming step by step. It starts with the basics such as variables, data types, operators, control flow, and functions. The purpose of this repo is to organize my practice codes, small projects, and notes as I build a stronger foundation in Python for data analysis, AI, and software development. It is a space to track progress, experiment with ideas, and revisit concepts whenever needed.
