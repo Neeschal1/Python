@@ -19,6 +19,8 @@ while True:
         index = False
         login_email = str(input("Enter your email: "))
         login_password = str(input("Enter your password: "))
+        if len(emails) == 0:
+            print("Register an email! Press 2 to do it.")
         for i in range(0, len(emails)):
             if login_email == emails[i]:
                 if login_password == passwords[i]:
@@ -58,11 +60,9 @@ while True:
                         elif user_choice == 4:
                             break
                 else:
-                    print("Invalid! Please check your password and try again.")
-            else:
-                print(
-                    "Your email is not registered. Please signup and come back to log in. Thank you!"
-                )
+                    print("Invalid password! Try again.")
+                break
+            
 
     elif user_input == 2:
         status = False
