@@ -16,52 +16,54 @@ while True:
         )
     )
     if user_input == 1:
-        index = False
+        found = False
         login_email = str(input("Enter your email: "))
         login_password = str(input("Enter your password: "))
         if len(emails) == 0:
             print("Register an email! Press 2 to do it.")
-        for i in range(0, len(emails)):
-            if login_email == emails[i]:
-                if login_password == passwords[i]:
-                    index = True
-                    print(f"Welcome! {full_names[i]}")
-                    while True:
-                        print(
-                            """Choose any of the following option:
-                                    1. Check Balance
-                                    2. Deposit Money
-                                    3. Withdraw Money
-                                    4. Logout"""
-                        )
-                        user_choice = int(input("Enter your choice: "))
-                        if user_choice == 1:
-                            print(f"Your balance: {balance[i]}")
-                        elif user_choice == 2:
-                            deposit_amount = int(
-                                input(
-                                    "Enter the amount that you want to deposit: NRs. "
-                                )
-                            )
-                            balance[i] = balance[i] + deposit_amount
-                            print(f"Your new balance: NRs. {balance[i]}")
-                        elif user_choice == 3:
-                            withdraw_amount = int(
-                                input(
-                                    "Enter the amount that you want to withdraw: NRs. "
-                                )
-                            )
-                            balance[i] = balance[i] - withdraw_amount
+        else:
+            for i in range(0, len(emails)):
+                if login_email == emails[i]:
+                    if login_password == passwords[i]:
+                        found = True
+                        print(f"Welcome! {full_names[i]}")
+                        while True:
                             print(
-                                f"""You withdrawed NRs. {withdraw_amount} 
-                                      Your new balance: NRs. {balance[i]}
-                                      """
+                                """Choose any of the following option:
+                                        1. Check Balance
+                                        2. Deposit Money
+                                        3. Withdraw Money
+                                        4. Logout"""
                             )
-                        elif user_choice == 4:
-                            break
-                else:
-                    print("Invalid password! Try again.")
-                break
+                            user_choice = int(input("Enter your choice: "))
+                            if user_choice == 1:
+                                print(f"Your balance: {balance[i]}")
+                            elif user_choice == 2:
+                                deposit_amount = int(
+                                    input(
+                                        "Enter the amount that you want to deposit: NRs. "
+                                    )
+                                )
+                                balance[i] = balance[i] + deposit_amount
+                                print(f"Your new balance: NRs. {balance[i]}")
+                            elif user_choice == 3:
+                                withdraw_amount = int(
+                                    input(
+                                        "Enter the amount that you want to withdraw: NRs. "
+                                    )
+                                )
+                                balance[i] = balance[i] - withdraw_amount
+                                print(
+                                    f"""You withdrawed NRs. {withdraw_amount} 
+                                        Your new balance: NRs. {balance[i]}
+                                        """
+                                )
+                            elif user_choice == 4:
+                                break
+                    else:
+                        print("Invalid password! Try again.")
+            if not found:
+                print("Email not found.")    
             
 
     elif user_input == 2:
