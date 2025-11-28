@@ -1,0 +1,1 @@
+f"You can't divide {value} by 2! \n"
